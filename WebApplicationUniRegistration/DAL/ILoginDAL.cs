@@ -6,7 +6,7 @@ using WebApplicationUniRegistration.Models;
 
 namespace WebApplicationUniRegistration.DAL
 {
-    public interface IUserDAL
+    public interface ILoginDAL
     {
         User GetUserByEmail(string email);
     }

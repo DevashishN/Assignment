@@ -6,7 +6,7 @@ using WebApplicationUniRegistration.Models;
 
 namespace WebApplicationUniRegistration.BusinessLayer
 {
-    public interface IUserBL
+    public interface ILoginBL
     {
         bool Authenticate(User user);
     }

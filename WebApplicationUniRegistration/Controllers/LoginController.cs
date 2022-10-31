@@ -12,8 +12,8 @@ namespace WebApplicationUniRegistration.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly IUserBL _userBL;
-        public LoginController(IUserBL userBL)
+        private readonly ILoginBL _userBL;
+        public LoginController(ILoginBL userBL)
         {
             _userBL = userBL;
         }
@@ -23,20 +23,12 @@ namespace WebApplicationUniRegistration.Controllers
             return View();
         }
 
-        public ActionResult Register()
-        {
-            return View();
-        }
-
         public JsonResult Authenticate(User user)
         {
-
             bool IsUserValid = false;
-
+            //User loggedUser = _userBL.Authenticate(user);
             IsUserValid=_userBL.Authenticate(user);
-            
-            return Json(new { result = IsUserValid, url = Url.Action("Index", "User") });
-
+            return Json(new { result = IsUserValid, url = Url.Action("Index", "Login") });
         }
     }
 }

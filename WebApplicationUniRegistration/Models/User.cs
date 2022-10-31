@@ -20,9 +20,7 @@ namespace WebApplicationUniRegistration.Models
         public string Password { get; set; }
         public string RoleName { get; set; }
         public int RoleId { get; set; }
-
         public Student Student { get; set; }
-
         public User() { }
 
         public User(string emailAddress, string password, string roleName, int roleId)

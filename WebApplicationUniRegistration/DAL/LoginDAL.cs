@@ -9,10 +9,10 @@ using WebApplicationUniRegistration.Models;
 
 namespace WebApplicationUniRegistration.DAL
 {
-    public class UserDAL : IUserDAL
+    public class LoginDAL : ILoginDAL
     {
-        private readonly ICDAL _connection;
-        public UserDAL(ICDAL connection)
+        private readonly IConnectionDAL _connection;
+        public LoginDAL(IConnectionDAL connection)
         {
             _connection = connection;
         }

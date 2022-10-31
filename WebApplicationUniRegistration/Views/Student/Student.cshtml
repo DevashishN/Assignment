@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/Register.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form" action="" method="post">
+                <h1>Register</h1>
+                <input id="firstName" type="text" placeholder="firstName" required />
+                <input id="lastName" type="text" placeholder="lastName" required />
+                <input id="Address" type="text" placeholder="Address" required />
+                <input id="phoneNumber" type="text" placeholder="phoneNumber" required />
+                <input id="dateOfBirth" type="date" placeholder="dateOfBirth" required />
+                <input id="guardianName" type="text" placeholder="guardianName" required />
+                <input id="NID" type="text" placeholder="NID" required />
+                <input id="emailAddress" type="email" placeholder="Email" required />
+                <input id="password" type="password" placeholder="Password" required />
+
+                <button onclick="signIn()">login</button>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

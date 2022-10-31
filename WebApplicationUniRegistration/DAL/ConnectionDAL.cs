@@ -7,26 +7,17 @@ using System.Web;
 
 namespace WebApplicationUniRegistration.DAL
 {
-    public class CDAL : ICDAL
+    public class ConnectionDAL : IConnectionDAL
     {
+        private const string connectionstring = @"server=localhost;database=StudentRegistration;uid=wbpoc;pwd=sql@tfs2008";
 
-        public const string connectionstring = @"server=localhost;database=StudentRegistration;uid=wbpoc;pwd=sql@tfs2008";
+        private SqlConnection connection;
 
-        public SqlConnection connection;
-        public CDAL()
-        {
-            connection = new SqlConnection(connectionstring);
-            OpenConnection();
-        }
         public void OpenConnection()
         {
             try
             {
-                if (connection.State == System.Data.ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-
+                connection = new SqlConnection(connectionstring);
                 connection.Open();
             }
             catch (SqlException ex)

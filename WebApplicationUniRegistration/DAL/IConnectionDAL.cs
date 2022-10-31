@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WebApplicationUniRegistration.DAL
 {
-    public interface ICDAL
+    public interface IConnectionDAL
     {
         void OpenConnection();
         void CloseConnection();

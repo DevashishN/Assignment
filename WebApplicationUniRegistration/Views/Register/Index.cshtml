@@ -3,39 +3,32 @@
     Layout = null;
 }
 
-
 <!DOCTYPE html>
+
 <html>
 <head>
-
-
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script type="text/javascript" src="~/Scripts/LoginIndex.js"></script>
-    <link rel="stylesheet" href="~/Content/css/login.css">
-
-    <title>Login</title>
+    <link rel="stylesheet" href="~/Content/css/Register.css">
+    <script type="text/javascript" src="~/Scripts/RegisterIndex.js"></script>
+    <title>Register</title>
 </head>
-
 <body>
-
     <div class="login-page">
-        <div class="form">           
-            <form class="login-form">
-                <h1>Login</h1>
+        <div class="form">
+            <form onsubmit="registerUser()" class="login-form" method="post">
+                <h1>Register</h1>
                 <input id="emailAddress" type="email" placeholder="Email" required />
                 <input id="password" type="password" placeholder="Password" required />
-                <button onclick="signIn()">login</button>
-                <p class="message">Not registered? <a href="Register/">Create an account</a></p>
+                <input id="confirmpassword" type="password" placeholder=" confrim Password" required />
+
+                <input class ="submitBtn"type="submit">register</input>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
             </form>
         </div>
     </div>
-
-    <script>
-
-    </script>
 </body>
 </html>
 

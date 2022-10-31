@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace WebApplicationUniRegistration.Models
 {
-    public enum role
+    public enum Role
     {
-        admin = 1,
-        student = 2
+        user = 1,
+        student = 2,
+        admin = 3      
     }
 }

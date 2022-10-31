@@ -15,8 +15,7 @@ namespace WebApplicationUniRegistration.Models {
         public DateTime DateTime { get; set; }
         public string GuardianName { get; set; }
         public string Email { get; set; }
-        public string Nid { get; set; }
-        //public List <Result> Results { get; set; }
+        public string NationalId { get; set; }
 
         public Student() { }
 
@@ -30,7 +29,7 @@ namespace WebApplicationUniRegistration.Models {
             DateTime = dateTime;
             GuardianName = guardianName;
             Email = email;
-            Nid = nid;
+            NationalId = nid;
         }
     }
 }

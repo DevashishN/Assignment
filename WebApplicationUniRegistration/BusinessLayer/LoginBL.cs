@@ -7,18 +7,17 @@ using WebApplicationUniRegistration.DAL;
 
 namespace WebApplicationUniRegistration.BusinessLayer
 {
-    public class UserBL : IUserBL
+    public class LoginBL : ILoginBL
     {
-        private readonly IUserDAL _userDAL;
-        public UserBL(IUserDAL userDAL)
+        private readonly ILoginDAL _userDAL;
+        public LoginBL(ILoginDAL userDAL)
         {
             _userDAL = userDAL;
         }
         public bool Authenticate(User user)
         {
             bool isUserValid=false;
-            string email = user.Email;
-            User validUser=_userDAL.GetUserByEmail(email);
+            User validUser=_userDAL.GetUserByEmail(user.Email);
             if (validUser != null)
             {
                 isUserValid=BCrypt.Net.BCrypt.Verify(user.Password, validUser.Password);
@@ -27,6 +26,8 @@ namespace WebApplicationUniRegistration.BusinessLayer
             return isUserValid;
 
         }
+
+
 
       
     }

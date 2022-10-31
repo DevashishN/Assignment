@@ -9,6 +9,14 @@
 function registerUser() {
     var emailAddress = $("#emailAddress").val(); // read email address input
     var password = $("#password").val(); // read password input
+    var confirmpassword = $("#confirmpassword").val();
+
+
+    if (password != confirmpassword) {
+        toastr.error('Password do not match');
+        return false;
+    }
+
     // create object to map LoginModel
     var authObj = { Email: emailAddress, Password: password };
     // alert(emailAddress);
@@ -33,7 +41,7 @@ function sendData(userCredential) {
     return new Promise((resolve, reject) => {
         $.ajax({
             type: "POST",
-            url: "/RegistrationSystem/Create",
+            url: "/Register/RegisterUser",
             data: userCredential,
             dataType: "json",
             success: function (data) {

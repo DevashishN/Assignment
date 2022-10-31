@@ -16,9 +16,11 @@ namespace WebApplicationUniRegistration
             // it is NOT necessary to register your controllers
 
             // e.g. container.RegisterType<ITestService, TestService>();
-            container.RegisterType<IUserBL, UserBL>();
-            container.RegisterType<ICDAL, CDAL>();
-            container.RegisterType<IUserDAL, UserDAL>();
+            container.RegisterType<ILoginBL, LoginBL>();
+            container.RegisterType<IConnectionDAL, ConnectionDAL>();
+            container.RegisterType<ILoginDAL, LoginDAL>();
+            container.RegisterType<IRegisterBL, RegisterBL>();
+            container.RegisterType<IRegisterDAL, RegisterDAL>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
