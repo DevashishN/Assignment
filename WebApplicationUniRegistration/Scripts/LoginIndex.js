@@ -7,26 +7,21 @@
 });
 
 function signIn() {
-    var emailAddress = $("#emailAddress").val(); // read email address input
-    var password = $("#password").val(); // read password input
-    // create object to map LoginModel
+    var emailAddress = $("#emailAddress").val();
+    var password = $("#password").val();
     var authObj = { Email: emailAddress, Password: password };
-   // alert(emailAddress);
-  
+
     sendData(authObj).then((response) => {
-        //alert(response.result);
         if (response.result) {
             toastr.success("Welcome!");
-            //window.location.href = response.url;
+            window.location = response.url;
         }
         else {
             toastr.error("Incorrect credentials");
-            //alert("Incorrect credentials");
         }
-    })
-        .catch((error) => {
-            toastr.error("Unable to authenticate. Please try again!");
-        });
+    }).catch((error) => {
+        toastr.error("Unable to authenticate. Please try again!");
+    });
 }
 
 function sendData(userCredential) {

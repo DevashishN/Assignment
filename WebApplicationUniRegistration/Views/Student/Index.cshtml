@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/Register.css">
+    <script type="text/javascript" src="~/Scripts/StudentIndex.js"></script>
+    <title>Register</title>
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form onsubmit="enrollStudent()" class="login-form" method="post">
+                <h1>Enroll</h1>
+                <input id="firstName" type="text" placeholder="First Name" required />
+                <input id="lastName" type="text" placeholder="Last Name" required />
+                <input id="address" type="text" placeholder="address" required />
+                <input id="phoneNumber" type="text" placeholder="Phone Number" required />
+                <input id="dateOfBirth" type="date" placeholder="Date Of Birth"  min="1950-10-31" max="2004-10-31" required />
+                <input id="guardianName" type="text" placeholder="Guardian Name" required />
+                <input id="emailAddress" type="email" placeholder="Email address" required />
+                <input id="nid" type="text" placeholder="nid" required />
+
+                <input class="submitBtn" type="submit" placeholder="Save"></input>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

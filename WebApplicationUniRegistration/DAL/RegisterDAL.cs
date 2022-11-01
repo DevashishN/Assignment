@@ -36,7 +36,6 @@ namespace WebApplicationUniRegistration.DAL
 
         public bool InsertUser(User user)
         {
-            string userEmail = "user.Email";
             string userHashedPassword = Crypto.HashPassword(user.Password);
             //Step 2 creat a command
             string query = "INSERT INTO Users([EmailAddress], [Password], [RoleId]) VALUES (@userEmail, @userHashedPassword, @userRoleId);";
@@ -51,9 +50,6 @@ namespace WebApplicationUniRegistration.DAL
                 return true;
             }
             return false;
-
-
-
         }
     }
 }

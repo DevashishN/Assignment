@@ -12,24 +12,13 @@ namespace WebApplicationUniRegistration.Models {
         public string LastName { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string GuardianName { get; set; }
         public string Email { get; set; }
         public string NationalId { get; set; }
+        public List<Results> ResultList { get; set; }
 
-        public Student() { }
-
-        public Student(int studentId, string firstName, string lastName, string address, string phoneNumber, DateTime dateTime, string guardianName, string email, string nid)
-        {
-            StudentId = studentId;
-            FirstName = firstName;
-            LastName = lastName;
-            Address = address;
-            PhoneNumber = phoneNumber;
-            DateTime = dateTime;
-            GuardianName = guardianName;
-            Email = email;
-            NationalId = nid;
-        }
+        public Status Status { get; set; }
+        public int UserId { get; set; }
     }
 }

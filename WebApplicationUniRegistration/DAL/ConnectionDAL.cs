@@ -20,9 +20,9 @@ namespace WebApplicationUniRegistration.DAL
                 connection = new SqlConnection(connectionstring);
                 connection.Open();
             }
-            catch (SqlException ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -39,11 +39,13 @@ namespace WebApplicationUniRegistration.DAL
         {
             OpenConnection();
             DataTable data = new DataTable();
+
             try
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.CommandType = CommandType.Text;
+
                     if (parameters != null)
                     {
                         parameters.ForEach(parameter =>
@@ -51,6 +53,7 @@ namespace WebApplicationUniRegistration.DAL
                             command.Parameters.AddWithValue(parameter.ParameterName, parameter.Value);
                         });
                     }
+
                     using (SqlDataAdapter sda = new SqlDataAdapter(command))
                     {
                         sda.Fill(data);
@@ -59,10 +62,11 @@ namespace WebApplicationUniRegistration.DAL
                 }
 
             }
-            catch (SqlException ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
+
             CloseConnection();
             return data;
         }

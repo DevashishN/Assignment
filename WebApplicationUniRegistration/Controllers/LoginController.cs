@@ -4,9 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using WebApplicationUniRegistration.ViewModels;
 
 namespace WebApplicationUniRegistration.Controllers
 {
@@ -17,18 +16,35 @@ namespace WebApplicationUniRegistration.Controllers
         {
             _userBL = userBL;
         }
-        // GET: Login
         public ActionResult Index()
         {
             return View();
         }
-
-        public JsonResult Authenticate(User user)
+        [HttpPost]
+        public JsonResult Authenticate(LoginViewModel login)
         {
-            bool IsUserValid = false;
-            //User loggedUser = _userBL.Authenticate(user);
-            IsUserValid=_userBL.Authenticate(user);
-            return Json(new { result = IsUserValid, url = Url.Action("Index", "Login") });
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return Json(new { result = false });
+                }
+
+                User user = _userBL.Authenticate(login.Email, login.Password);
+
+                if (user == null)
+                {
+                    return Json(new { result = false });
+                }
+
+                this.Session["userId"] = user.UserId;
+
+                return Json(new { result = true, url = Url.Action("Index", "Student") });
+            }
+            catch
+            {
+                return Json(new { result = false, url = Url.Action("Index", "Login") });
+            }
         }
     }
 }

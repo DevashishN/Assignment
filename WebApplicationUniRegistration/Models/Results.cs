@@ -11,5 +11,7 @@ namespace WebApplicationUniRegistration.Models
         public int subjectId { get; set; }
         public string subjectName { get; set; }
         public int subjectMark { get; set; }
+        public int studentId { get; set; }
+
     }
 }

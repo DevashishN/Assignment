@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using WebApplicationUniRegistration.Models;
+﻿using WebApplicationUniRegistration.Models;
 using WebApplicationUniRegistration.DAL;
+using System.Web.Helpers;
 
 namespace WebApplicationUniRegistration.BusinessLayer
 {
@@ -14,21 +11,21 @@ namespace WebApplicationUniRegistration.BusinessLayer
         {
             _userDAL = userDAL;
         }
-        public bool Authenticate(User user)
+        public User Authenticate(string email, string password)
         {
-            bool isUserValid=false;
-            User validUser=_userDAL.GetUserByEmail(user.Email);
-            if (validUser != null)
+            User user = _userDAL.GetUserByEmail(email);
+
+            if (user == null)
             {
-                isUserValid=BCrypt.Net.BCrypt.Verify(user.Password, validUser.Password);
+                return null;
             }
 
-            return isUserValid;
+            if (!Crypto.VerifyHashedPassword(user.Password, password))
+            {
+                return null;
+            }
 
+            return user;
         }
-
-
-
-      
     }
 }
