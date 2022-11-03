@@ -9,7 +9,7 @@ namespace WebApplicationUniRegistration.DAL
 {
     public interface IStudentDAL
     {
-        bool CheckDuplicate(string nationalId, string email, string phoneNumber, int userId);
+        bool CheckDuplicate(string nationalId, string email, string phoneNumber);
         bool InsertStudent(Student student);
     }
 }

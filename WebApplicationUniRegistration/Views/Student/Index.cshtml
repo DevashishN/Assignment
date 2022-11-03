@@ -22,11 +22,14 @@
                 <input id="firstName" type="text" placeholder="First Name" required />
                 <input id="lastName" type="text" placeholder="Last Name" required />
                 <input id="address" type="text" placeholder="address" required />
-                <input id="phoneNumber" type="text" placeholder="Phone Number" required />
-                <input id="dateOfBirth" type="date" placeholder="Date Of Birth"  min="1950-10-31" max="2004-10-31" required />
+                <input id="phoneNumber" type="text" pattern="[5]{1}[0-9]{7}" placeholder="Phone Number" required />
+                <small>Format: 51234567</small><br><br>
+
+                <input id="dateOfBirth" type="date" placeholder="Date Of Birth" min="1950-10-31" max="2004-10-31" required />
                 <input id="guardianName" type="text" placeholder="Guardian Name" required />
                 <input id="emailAddress" type="email" placeholder="Email address" required />
-                <input id="nid" type="text" placeholder="nid" required />
+                <input id="nid" type="text" pattern="[N]{1}[0-9]{13}" placeholder="nid" required />
+                <small>Format: N1234567891111</small><br><br>
 
                 <input class="submitBtn" type="submit" placeholder="Save"></input>
             </form>

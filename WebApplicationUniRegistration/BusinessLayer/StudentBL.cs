@@ -18,7 +18,7 @@ namespace WebApplicationUniRegistration.BusinessLayer
 
         public bool Enroll(Student student)
         {
-            bool studentDetailsExist = _studentDAL.CheckDuplicate(student.NationalId, student.Email, student.PhoneNumber, student.UserId);
+            bool studentDetailsExist = _studentDAL.CheckDuplicate(student.NationalId, student.Email, student.PhoneNumber);
             if (!studentDetailsExist)
             {
                 student.Status = Status.Waiting;

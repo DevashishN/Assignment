@@ -18,15 +18,14 @@ namespace WebApplicationUniRegistration.DAL
             _connection = connection;
         }
 
-        public bool CheckDuplicate(string nationalId, string email, string phoneNumber, int userId)
+        public bool CheckDuplicate(string nationalId, string email, string phoneNumber)
         {
             string query = @"select TOP 1* from students where (NationalId=@NationalId OR EmailAddress = @EmailAddress
-                                                            OR PhoneNumber = @PhoneNumber OR UserId = @UserId)";
+                                                            OR PhoneNumber = @PhoneNumber)";
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@NationalId", nationalId));
             parameters.Add(new SqlParameter("@EmailAddress", email));
             parameters.Add(new SqlParameter("@PhoneNumber", phoneNumber));
-            parameters.Add(new SqlParameter("@UserId", userId));
 
             DataTable results = _connection.Query(query, parameters);
 

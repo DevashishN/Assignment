@@ -21,11 +21,12 @@
             <form onsubmit="registerUser()" class="login-form" method="post">
                 <h1>Register</h1>
                 <input id="emailAddress" type="email" placeholder="Email" required />
-                <input id="password" type="password" placeholder="Password" required />
+                <input id="password" type="password" minlength="5" placeholder="Password" required />
+                <small>Format: al*zbest#</small><br><br>
                 <input id="confirmpassword" type="password" placeholder=" confrim Password" required />
 
-                <input class ="submitBtn"type="submit">register</input>
-                <p class="message">Not registered? <a href="#">Create an account</a></p>
+                <input class="submitBtn" type="submit"></input>
+                <p class="message">Already registered? <a href="/Login">Go to Login</a></p>
             </form>
         </div>
     </div>
