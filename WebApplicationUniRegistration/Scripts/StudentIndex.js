@@ -30,7 +30,7 @@ function enrollStudent() {
             //window.location.href = response.url;
         }
         else {
-            toastr.error("Please check your credentials");
+            toastr.error("User already exists");
             //alert("Incorrect credentials");
         }
     })
@@ -55,3 +55,4 @@ function sendData(userCredential) {
         })
     });
 }
+

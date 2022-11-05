@@ -23,6 +23,9 @@ namespace WebApplicationUniRegistration
             container.RegisterType<IRegisterDAL, RegisterDAL>();
             container.RegisterType<IStudentBL, StudentBL>();
             container.RegisterType<IStudentDAL, StudentDAL>();
+            container.RegisterType<IAdminBL, AdminBL>();
+            container.RegisterType<IAdminDAL, AdminDAL>();
+            
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
