@@ -27,7 +27,7 @@ function enrollStudent() {
         //alert(response.result);
         if (response.result) {
             toastr.success("Application successful");
-            //window.location.href = response.url;
+            window.location.href = "/Result/Index";
         }
         else {
             toastr.error("Please check your credentials");

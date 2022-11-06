@@ -1,0 +1,101 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script type="text/javascript" src="~/Scripts/ResultIndex.js"></script>
+    <link rel="stylesheet" href="~/Content/css/Results.css" id="theme-stylesheet">
+
+    <title>Auto control inputs</title>
+</head>
+<body>
+    <div class="center">
+        <h1>Enter your results</h1>
+        <form onsubmit="registerResult()" method="post">
+
+            <div class="inputbox">
+                <select style="font-size:20px;" id="subject1" required>
+                    <option value="1">English</option>
+                    <option value="2">French</option>
+                    <option value="3">Maths</option>
+                    <option value="4">Economics</option>
+                    <option value="5">Chemistry</option>
+                    <option value="6">Biology</option>
+                    <option value="7">Physics</option>
+                </select>
+                &nbsp; &nbsp; &nbsp;
+
+                <select style="font-size:20px;" id="grade1" required>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+
+            <div class="inputbox">
+                <select style="font-size:20px;" id="subject2" required>
+                    <option value="1">English</option>
+                    <option value="2">French</option>
+                    <option value="3">Maths</option>
+                    <option value="4">Economics</option>
+                    <option value="5">Chemistry</option>
+                    <option value="6">Biology</option>
+                    <option value="7">Physics</option>
+                </select>
+                &nbsp; &nbsp; &nbsp;
+
+                <select style="font-size:20px;" id="grade2" required>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+
+            <div class="inputbox">
+                <select style="font-size:20px;" id="subject3" required>
+                    <option value="1">English</option>
+                    <option value="2">French</option>
+                    <option value="3">Maths</option>
+                    <option value="4">Economics</option>
+                    <option value="5">Chemistry</option>
+                    <option value="6">Biology</option>
+                    <option value="7">Physics</option>
+                </select>
+                &nbsp; &nbsp; &nbsp;
+
+                <select style="font-size:20px;" id="grade3" required>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+
+            <br> <br> <br>
+
+            <div class="inputbox">
+                <input type="submit" placeholder="Save"> name="save">
+            </div>
+
+            <!--<input class="submitBtn" type="submit" placeholder="Save"></input>-->
+
+
+        </form>
+    </div>
+</body>
+</html>

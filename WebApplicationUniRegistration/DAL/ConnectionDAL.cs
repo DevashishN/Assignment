@@ -70,6 +70,38 @@ namespace WebApplicationUniRegistration.DAL
             CloseConnection();
             return data;
         }
+        public int Insert(string query, List<SqlParameter> parameters)
+        {
+            OpenConnection();
+           
+
+            try
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.CommandType = CommandType.Text;
+
+                    if (parameters != null)
+                    {
+                        parameters.ForEach(parameter =>
+                        {
+                            command.Parameters.AddWithValue(parameter.ParameterName, parameter.Value);
+                        });
+                    }
+
+                    return command.ExecuteNonQuery();
+
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            CloseConnection();
+            
+        }
 
     }
 }

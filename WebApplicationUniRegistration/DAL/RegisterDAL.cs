@@ -42,7 +42,7 @@ namespace WebApplicationUniRegistration.DAL
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@userEmail", user.Email));
             parameters.Add(new SqlParameter("@userHashedPassword", userHashedPassword));
-            parameters.Add(new SqlParameter("@userRoleId",Role.user ));
+            parameters.Add(new SqlParameter("@userRoleId", (int)Role.student));
 
             DataTable results = _connection.Query(query, parameters);
             if (results.Rows.Count > 0)

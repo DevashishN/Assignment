@@ -21,11 +21,15 @@ namespace WebApplicationUniRegistration.BusinessLayer
             bool studentDetailsExist = _studentDAL.CheckDuplicate(student.NationalId, student.Email, student.PhoneNumber);
             if (!studentDetailsExist)
             {
-                student.Status = Status.Waiting;
                 _studentDAL.InsertStudent(student);
                 return true;
             }
             return false;
+        }
+
+        public bool CheckIfStudentExist(int userId)
+        {
+            return _studentDAL.CheckStudentExist(userId);
         }
     }
 }

@@ -9,8 +9,7 @@ namespace WebApplicationUniRegistration.Models
 {
     public enum Role
     {
-        user = 1,
-        student = 2,
-        admin = 3      
+        student = 1,
+        admin = 2     
     }
 }

@@ -12,9 +12,13 @@ namespace WebApplicationUniRegistration.Controllers
     public class LoginController : Controller
     {
         private readonly ILoginBL _userBL;
-        public LoginController(ILoginBL userBL)
+        private readonly IRoleBL _roleBL;
+        private readonly IStudentBL _studentBL;
+        public LoginController(ILoginBL userBL, IRoleBL roleBL, IStudentBL studentBL)
         {
             _userBL = userBL;
+            _roleBL = roleBL;
+            _studentBL = studentBL;
         }
         public ActionResult Index()
         {
@@ -38,6 +42,21 @@ namespace WebApplicationUniRegistration.Controllers
                 }
 
                 this.Session["userId"] = user.UserId;
+                user.userRole = (Role)_roleBL.getUserRole(user.UserId);
+                if(user.userRole == Role.admin)
+                {
+                    return Json(new { result = true, url = Url.Action("Index", "Admin") });
+                }
+
+                var studentExist = _studentBL.CheckIfStudentExist(user.UserId);
+                if (studentExist)
+                {
+                    return Json(new { result = true, url = Url.Action("Index", "Home") });
+                }
+                else
+                {
+                    return Json(new { result = true, url = Url.Action("Index", "Student") });
+                }
 
                 return Json(new { result = true, url = Url.Action("Index", "Student") });
             }

@@ -41,5 +41,10 @@ namespace WebApplicationUniRegistration.Models {
         public List<Results> ResultList { get; set; }
         public Status Status { get; set; }
         public int UserId { get; set; }
+
+        public Student()
+        {
+            ResultList = new List<Results>();
+        }
     }
 }

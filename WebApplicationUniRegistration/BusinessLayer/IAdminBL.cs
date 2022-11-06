@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebApplicationUniRegistration.Models;
 
 namespace WebApplicationUniRegistration.BusinessLayer
 {
-    public interface IStudentBL
+    internal interface IAdminBL
     {
-        bool Enroll(Student student);
-        bool CheckIfStudentExist(int userId);
     }
 }

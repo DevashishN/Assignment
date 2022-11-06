@@ -7,10 +7,8 @@ using WebApplicationUniRegistration.Models;
 
 namespace WebApplicationUniRegistration.DAL
 {
-    public interface IStudentDAL
+    public interface IResultDAL
     {
-        bool CheckDuplicate(string nationalId, string email, string phoneNumber);
-        bool InsertStudent(Student student);
-        bool CheckStudentExist(int userId);
+        bool enterStudentResults(List<Results> resultList, int userId);
     }
 }

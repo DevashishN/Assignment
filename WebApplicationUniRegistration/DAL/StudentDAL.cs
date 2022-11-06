@@ -41,9 +41,9 @@ namespace WebApplicationUniRegistration.DAL
         {
             //Step 2 creat a command
             string query = @"INSERT INTO Students([FirstName], [LastName], [Address], [PhoneNumber], [DateOfBirth], [GuardianName],
-                             [EmailAddress], [NationalId], [StatusId], [UserId]) 
+                             [EmailAddress], [NationalId], [UserId]) 
                              VALUES (@FirstName, @LastName, @Address, @PhoneNumber,
-                             @DateOfBirth, @GuardianName, @EmailAddress, @NationalId, @StatusId, @UserId);";
+                             @DateOfBirth, @GuardianName, @EmailAddress, @NationalId, @UserId);";
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@FirstName", student.FirstName));
             parameters.Add(new SqlParameter("@LastName", student.LastName));
@@ -54,11 +54,25 @@ namespace WebApplicationUniRegistration.DAL
             parameters.Add(new SqlParameter("@EmailAddress", student.Email));
             parameters.Add(new SqlParameter("@NationalId", student.NationalId));
             parameters.Add(new SqlParameter("@UserId", student.UserId));
-            parameters.Add(new SqlParameter("@StatusId", student.Status));
 
 
             DataTable results = _connection.Query(query, parameters);
             if (results.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool CheckStudentExist(int userId)
+        {
+            string query = @"select NationalId from Students Where UserId =  @UserId";
+
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            parameters.Add(new SqlParameter("@UserId", userId));
+
+            DataTable results = _connection.Query(query, parameters);
+            if(results.Rows.Count > 0)
             {
                 return true;
             }

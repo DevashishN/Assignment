@@ -5,10 +5,14 @@ using System.Web;
 
 namespace WebApplicationUniRegistration.Models
 {
-    public class Subject
+    public enum Grade
     {
-        public int SubjectId { get; set; }
-        public string SubjectName { get; set; }
-        
+        A = 10,
+        B = 8,
+        C = 6,
+        D = 4,
+        E = 2,
+        F = 0
     }
 }
+

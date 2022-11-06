@@ -7,9 +7,8 @@ using WebApplicationUniRegistration.Models;
 
 namespace WebApplicationUniRegistration.BusinessLayer
 {
-    public interface IStudentBL
+    public interface IRoleBL 
     {
-        bool Enroll(Student student);
-        bool CheckIfStudentExist(int userId);
+        Role? getUserRole(int userId);
     }
 }

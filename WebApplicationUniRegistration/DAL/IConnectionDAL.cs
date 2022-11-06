@@ -13,5 +13,6 @@ namespace WebApplicationUniRegistration.DAL
         void OpenConnection();
         void CloseConnection();
         DataTable Query(string query, List<SqlParameter> parameters);
+        int Insert(string query, List<SqlParameter> parameters);
     }
 }

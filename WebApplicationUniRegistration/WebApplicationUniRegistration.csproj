@@ -146,24 +146,39 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="BusinessLayer\AdminBL.cs" />
+    <Compile Include="BusinessLayer\IAdminBL.cs" />
     <Compile Include="BusinessLayer\ILoginBL.cs" />
     <Compile Include="BusinessLayer\IRegisterBL.cs" />
+    <Compile Include="BusinessLayer\IResultBL.cs" />
     <Compile Include="BusinessLayer\IStudentBL.cs" />
+    <Compile Include="BusinessLayer\IRoleBL.cs" />
     <Compile Include="BusinessLayer\LoginBL.cs" />
     <Compile Include="BusinessLayer\RegisterBL.cs" />
+    <Compile Include="BusinessLayer\ResultBL.cs" />
+    <Compile Include="BusinessLayer\RoleBL.cs" />
     <Compile Include="BusinessLayer\StudentBL.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="DAL\AdminDAL.cs" />
     <Compile Include="DAL\ConnectionDAL.cs" />
+    <Compile Include="DAL\IAdminDAL.cs" />
     <Compile Include="DAL\IConnectionDAL.cs" />
     <Compile Include="DAL\ILoginDAL.cs" />
     <Compile Include="DAL\IRegisterDAL.cs" />
+    <Compile Include="DAL\IResultDAL.cs" />
+    <Compile Include="DAL\IRoleDAL.cs" />
     <Compile Include="DAL\IStudentDAL.cs" />
     <Compile Include="DAL\LoginDAL.cs" />
     <Compile Include="DAL\RegisterDAL.cs" />
+    <Compile Include="DAL\ResultDAL.cs" />
+    <Compile Include="DAL\RoleDAL.cs" />
     <Compile Include="DAL\StudentDAL.cs" />
+    <Compile Include="Models\Grade.cs" />
     <Compile Include="Models\Results.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Status.cs" />
@@ -175,6 +190,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\ResultList.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -183,6 +199,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Css\Login.css" />
     <Content Include="Content\Css\Register.css" />
+    <Content Include="Content\Css\Results.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -202,6 +219,7 @@
     <Content Include="Scripts\LoginIndex.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\RegisterIndex.js" />
+    <Content Include="Scripts\ResultIndex.js" />
     <Content Include="Scripts\StudentIndex.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -220,11 +238,14 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Result\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Helpers\" />
     <Folder Include="Services\" />
+    <Folder Include="Views\Subject\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

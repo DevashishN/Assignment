@@ -8,7 +8,7 @@ namespace WebApplicationUniRegistration.Models
     public enum Status
     {
         Waiting = 1,
-        Approve = 2,
+        Approved = 2,
         Rejected = 3
     }
 }

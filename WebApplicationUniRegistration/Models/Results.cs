@@ -7,11 +7,8 @@ namespace WebApplicationUniRegistration.Models
 {
     public class Results
     {
-        public int resultId { get; set; }
-        public int subjectId { get; set; }
-        public string subjectName { get; set; }
-        public int subjectMark { get; set; }
-        public int studentId { get; set; }
+        public Subject Subject { get; set; }
+        public string SubjectGrade { get; set; }
 
     }
 }
