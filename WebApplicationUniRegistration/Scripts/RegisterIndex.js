@@ -28,7 +28,7 @@ function registerUser() {
             //window.location.href = response.url;
         }
         else {
-            toastr.error("Please provide appropriate credentials");
+            toastr.error("Email already registered");
             //alert("Incorrect credentials");
         }
     })

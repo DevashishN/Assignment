@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebApplicationUniRegistration.BusinessLayer;
-using WebApplicationUniRegistration.Models;
+using WebApplicationUniRegistration.BL.BusinessLayer;
+using WebApplicationUniRegistration.DAL.Models;
 
 namespace WebApplicationUniRegistration.Controllers
 {

@@ -1,8 +1,8 @@
 using System.Web.Mvc;
 using Unity;
 using Unity.Mvc5;
-using WebApplicationUniRegistration.BusinessLayer;
-using WebApplicationUniRegistration.DAL;
+using WebApplicationUniRegistration.BL.BusinessLayer;
+using WebApplicationUniRegistration.DAL.DataAccessLayer;
 
 namespace WebApplicationUniRegistration
 {

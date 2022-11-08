@@ -1,5 +1,5 @@
-﻿using WebApplicationUniRegistration.Models;
-using WebApplicationUniRegistration.BusinessLayer;
+﻿using WebApplicationUniRegistration.DAL.Models;
+using WebApplicationUniRegistration.BL.BusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -64,6 +64,13 @@ namespace WebApplicationUniRegistration.Controllers
             {
                 return Json(new { result = false, url = Url.Action("Index", "Login") });
             }
+        }
+
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            Session["userId"] = null;
+            return RedirectToAction("LoginIndex");
         }
     }
 }

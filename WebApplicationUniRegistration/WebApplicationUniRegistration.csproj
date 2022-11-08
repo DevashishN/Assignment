@@ -146,45 +146,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="BusinessLayer\AdminBL.cs" />
-    <Compile Include="BusinessLayer\IAdminBL.cs" />
-    <Compile Include="BusinessLayer\ILoginBL.cs" />
-    <Compile Include="BusinessLayer\IRegisterBL.cs" />
-    <Compile Include="BusinessLayer\IResultBL.cs" />
-    <Compile Include="BusinessLayer\IStudentBL.cs" />
-    <Compile Include="BusinessLayer\IRoleBL.cs" />
-    <Compile Include="BusinessLayer\LoginBL.cs" />
-    <Compile Include="BusinessLayer\RegisterBL.cs" />
-    <Compile Include="BusinessLayer\ResultBL.cs" />
-    <Compile Include="BusinessLayer\RoleBL.cs" />
-    <Compile Include="BusinessLayer\StudentBL.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
-    <Compile Include="DAL\AdminDAL.cs" />
-    <Compile Include="DAL\ConnectionDAL.cs" />
-    <Compile Include="DAL\IAdminDAL.cs" />
-    <Compile Include="DAL\IConnectionDAL.cs" />
-    <Compile Include="DAL\ILoginDAL.cs" />
-    <Compile Include="DAL\IRegisterDAL.cs" />
-    <Compile Include="DAL\IResultDAL.cs" />
-    <Compile Include="DAL\IRoleDAL.cs" />
-    <Compile Include="DAL\IStudentDAL.cs" />
-    <Compile Include="DAL\LoginDAL.cs" />
-    <Compile Include="DAL\RegisterDAL.cs" />
-    <Compile Include="DAL\ResultDAL.cs" />
-    <Compile Include="DAL\RoleDAL.cs" />
-    <Compile Include="DAL\StudentDAL.cs" />
-    <Compile Include="Models\Grade.cs" />
-    <Compile Include="Models\Results.cs" />
-    <Compile Include="Models\Role.cs" />
-    <Compile Include="Models\Status.cs" />
-    <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\Subject.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,6 +164,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Css\admin.css" />
     <Content Include="Content\Css\homepage.css" />
     <Content Include="Content\Css\Login.css" />
     <Content Include="Content\Css\Register.css" />
@@ -205,6 +173,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\AdminIndex.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -260,6 +229,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebApplicationUniRegistration.BL\WebApplicationUniRegistration.BL.csproj">
+      <Project>{ed8c85ed-2e97-4a8b-9867-bbb2aae4a201}</Project>
+      <Name>WebApplicationUniRegistration.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApplicationUniRegistration.DAL\WebApplicationUniRegistration.DAL.csproj">
+      <Project>{f8beb42d-d659-4cf4-9288-99f2d9610436}</Project>
+      <Name>WebApplicationUniRegistration.DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
